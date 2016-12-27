@@ -82,16 +82,8 @@
     return this._state;
   };
 
-  Board.prototype.numRows = function () {
-    return this._numRows;
-  };
-
-  Board.prototype.numCols = function () {
-    return this._numCols;
-  };
-
-  Board.prototype.numMines = function () {
-    return this._numMines;
+  Board.prototype.probability = function () {
+    return this._probability;
   };
 
   Board.prototype.grid = function () {
