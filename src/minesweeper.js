@@ -128,10 +128,14 @@
   };
 
   Board.prototype.openCell = function (x, y) {
-    var cell = this._cell(x, y);
+    var cell = this._cell(x, y); // get cell
 
-    if (!cell || cell.state === CellStateEnum.OPEN || cell.flag !== CellFlagEnum.NONE ||
-         this._state === BoardStateEnum.WON || this._state === BoardStateEnum.LOST) {
+    // do not open if either
+    if (!cell || // cell is invalid
+        cell.state === CellStateEnum.OPEN || //it already is open
+        cell.flag !== CellFlagEnum.NONE || // it is flagged
+        this._state === BoardStateEnum.WON || //game is won or lost 
+        this._state === BoardStateEnum.LOST) {
       return;
     }
 
@@ -233,6 +237,7 @@
     mineArray = singleToMultiDimensionalArray(mineArray, cols);
     
     return mineArray;
+    // the minearray is 2d array with only ones and zeroes for mines or not mines
   };
 
   /**
