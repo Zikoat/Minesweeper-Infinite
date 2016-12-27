@@ -1,3 +1,25 @@
+note that this is a fork from https://github.com/binaryluke/Minesweeper
+# Infinite Minesweeper
+things are mostly the same from the fork, and the usage is below
+things that are different are the following:
+- there are no rows, columns and mine options, they have been replaced with a probability
+- the Board constructor takes a probability(between 0 and 1) instead of a generated minearray
+- removed BoardStateEnum.WON, as it cannot be reached
+- removed questionmark
+  - removed board.cycleCellFlag(x,y) 
+  - added board.flagCell(x, y) which toggles the flag
+- mines are generated as you open neighboring cells, or when they are being requested
+- negative coordinates are possible
+- there is an 
+
+## options
+openOnInit (boolean) opens field (0, 0) when the game initialises
+firstCell (int) says how far away from the first open mine 
+death (boolean)
+
+## Is it really infinite?
+the board size is limited to the maximum size of ints
+
 # Minesweeper
 
 A collection of objects that provide the logic needed to create a Minesweeper clone.

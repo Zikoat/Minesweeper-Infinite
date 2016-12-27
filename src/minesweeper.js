@@ -58,23 +58,13 @@
    *  Board
    */
 
-  var Board = function (mineArray) {
-    var isValid;
-
-    try {
-      isValid = isMineArrayValid(mineArray);
-    } catch (e) {
-      isValid = false;
-    }
-    
-    if (!isValid) {
-      throw new Error('The mine array supplied to Board constructor was not valid');
-    }
+  var Board = function (probability) {
+    //var isValid; // isvalid would check the probability to be between a certain threshold
 
     this._state = BoardStateEnum.PRISTINE;
-    this._numRows = mineArray.length;
+    /*this._numRows = mineArray.length;
     this._numCols = mineArray[0].length;
-    this._numMines = getNumMinesFromMineArray(mineArray, this._numRows, this._numCols);
+    this._numMines = getNumMinesFromMineArray(mineArray, this._numRows, this._numCols);*/
     this._grid = generateGridFromMineArray(mineArray, this._numRows, this._numCols);
   };
 
